@@ -23,6 +23,7 @@ literature/
 04_nuplan_static_obstacle/results*/
 05_nuplan_ocd_comparison/results*/
 06_optimal_control_expert/results*/
+07_expert_data_collection/outputs/
 
 # Local editor/OS files
 .DS_Store

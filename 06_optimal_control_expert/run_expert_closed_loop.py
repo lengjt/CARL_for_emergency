@@ -37,11 +37,11 @@ from expert_optimizer import ExpertConfig, OptimalControlExpert, SceneGeometry  
 class ExpertTrajectoryPlanner:
     """Replan at a configurable period and return an 8 s nuPlan reference every 0.1 s."""
 
-    def __init__(self, geometry, config, replan_period_s):
+    def __init__(self, geometry, config, replan_period_s, pass_side=-1):
         self.geometry = geometry
         self.config = config
         self.replan_period_s = float(replan_period_s)
-        self.optimizer = OptimalControlExpert(geometry, config, pass_side=-1)
+        self.optimizer = OptimalControlExpert(geometry, config, pass_side=pass_side)
         self.cached = None
         self.cached_timestamp_us = None
         self.last_attempt_timestamp_us = None
@@ -174,6 +174,8 @@ def run(
     initial_speed_mps: float = 15.0,
     peak_scale: float = 1.0,
     maneuver: str = "safe_stop",
+    pass_side: int = -1,
+    scenario_token: str = "81f400b414215325-s0",
 ):
     result_id = output_name or f"replan_{str(period_s).replace('.', 'p')}s"
     root = output_root or HERE / "results"
@@ -181,12 +183,14 @@ def run(
     if (out / "summary.json").is_file() and not force:
         return json.loads((out / "summary.json").read_text())
 
-    scenario, cfg = build_scenario("81f400b414215325-s0")
+    if pass_side not in (-1, 1):
+        raise ValueError("pass_side must be -1 (right) or 1 (left)")
+    scenario, cfg = build_scenario(scenario_token)
     apply_initial_speed_override(scenario, initial_speed_mps)
     obstacle_poses = stopped_vehicle_poses(scenario)
     geometry = SceneGeometry(scenario, obstacle_poses[0])
     expert_config = ExpertConfig(capability_scale=peak_scale, maneuver=maneuver)
-    planner = ExpertTrajectoryPlanner(geometry, expert_config, period_s)
+    planner = ExpertTrajectoryPlanner(geometry, expert_config, period_s, pass_side=pass_side)
 
     original_controller = build_controller(scenario, cfg)
     motion_model = OCDMotionModel(scenario.ego_vehicle_parameters, physics_dt=0.001, base_scale=peak_scale)
@@ -307,6 +311,8 @@ def run(
         "initial_speed_mps": initial_speed_mps,
         "internal_peak_scale": peak_scale,
         "maneuver": maneuver,
+        "pass_side": None if maneuver == "safe_stop" else ("right" if pass_side == -1 else "left"),
+        "scenario_token": scenario_token,
         "frames": len(rows),
         "duration_s": rows[-1]["time_s"],
         "first_collision_time_s": min(collision_times) if collision_times else None,
@@ -343,6 +349,8 @@ def main():
     parser.add_argument("--speed", type=float, default=15.0)
     parser.add_argument("--peak-scale", type=float, default=1.0)
     parser.add_argument("--maneuver", choices=["safe_stop", "pass"], default="safe_stop")
+    parser.add_argument("--pass-side", choices=["left", "right"], default="right")
+    parser.add_argument("--scenario-token", default="81f400b414215325-s0")
     parser.add_argument("--output-name")
     parser.add_argument("--output-root", type=Path)
     parser.add_argument("--force", action="store_true")
@@ -351,6 +359,8 @@ def main():
     summaries = [run(
         period, args.force, args.output_root, args.output_name,
         args.speed, args.peak_scale, args.maneuver,
+        1 if args.pass_side == "left" else -1,
+        args.scenario_token,
     ) for period in periods]
     results = args.output_root or HERE / "results"
     results.mkdir(parents=True, exist_ok=True)

@@ -1,0 +1,13 @@
+{
+  "contract_version": "expert_dataset_v1",
+  "scenario_token": "81f400b414215325-s0",
+  "initial_speed_mps": 12.0,
+  "ocd_internal_mf52_peak_scale": 1.0,
+  "expert_replan_period_s": 0.1,
+  "lqr_ocd_period_s": 0.1,
+  "candidates": [
+    {"maneuver_type": "safe_stop", "optimizer_maneuver": "safe_stop", "pass_side": null},
+    {"maneuver_type": "pass_left", "optimizer_maneuver": "pass", "pass_side": "left"},
+    {"maneuver_type": "pass_right", "optimizer_maneuver": "pass", "pass_side": "right"}
+  ]
+}
