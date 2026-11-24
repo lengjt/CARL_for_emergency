@@ -1,0 +1,10 @@
+{
+  "name": "straight_online",
+  "speed": 20.0,
+  "base_scale": 0.6,
+  "friction_mode": "internal_mu",
+  "duration": 14.0,
+  "road": {"width": 10.0, "length": 160.0, "curvature": 0.0},
+  "obstacles": [{"s": 45.0, "d": 0.0, "length": 4.0, "width": 1.8, "reveal_distance": 30.0}],
+  "patches": []
+}

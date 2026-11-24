@@ -1,0 +1,9 @@
+{
+  "name": "frozen_family_test_closed_loop_v1",
+  "controllers": ["aeb", "joint", "rolling", "retrieval", "cfm", "hybrid"],
+  "cfm_model_seeds": [17, 29, 43],
+  "planning_deadline_s": 0.1,
+  "representative_replays": 8,
+  "primary_unit": "scenario episode; CFM is summarized across scenarios and training seeds",
+  "timing_scope": "candidate generation, prediction rollout, swept checks, ranking and action; excludes OCD stepping and disk output"
+}

@@ -1,0 +1,40 @@
+<!doctype html><html lang="zh"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>OCD 避障回放</title>
+<style>body{margin:24px;background:#f4f6fa;color:#172b44;font:16px system-ui}main{max-width:1100px;margin:auto}canvas{width:100%;background:white;border:1px solid #d6dfeb;border-radius:8px}input{width:55%}button,select{padding:8px 12px}pre{white-space:pre-wrap;line-height:1.7;background:white;padding:16px;border-radius:8px}small,p{line-height:1.6;color:#53657b}.controls{display:flex;align-items:center;gap:12px;flex-wrap:wrap}</style>
+<main><h2 id="title"></h2><p id="outcome"></p><canvas id="view" width="1100" height="420" aria-label="车辆避障轨迹动画"></canvas>
+<p class="controls"><button id="play">播放</button><input aria-label="回放进度" id="slider" type="range" min="0" value="0" step="1"><select aria-label="播放速度" id="speed"><option value="0.25">0.25 倍速</option><option value="0.5">0.5 倍速</option><option value="1" selected>1 倍速</option><option value="2">2 倍速</option></select></p>
+<pre id="stats"></pre><small>蓝色：自车及轨迹；红色：已揭示障碍；灰色：尚未揭示的物理障碍；浅橙色：路面附着分区。回放显示完整世界，控制器仅在揭示后获得障碍信息。附着数字为模型能力倍率（internal_mu：内部峰值参数；post_force：输出力），不是绝对摩擦系数 μ。车辆为合成研究参数。</small></main>
+<script>
+const data=__PAYLOAD__;
+const canvas=document.querySelector('canvas'),ctx=canvas.getContext('2d'),slider=document.querySelector('#slider');
+const button=document.querySelector('#play'),speed=document.querySelector('#speed');
+slider.max=data.rows.length-1;document.querySelector('#title').textContent=data.name+' · '+data.status;
+const yes=v=>v===null?'不适用':v?'是':'否';
+document.querySelector('#outcome').textContent=`最终结果：曾完成障碍处理 ${yes(data.metrics.avoidance_success)} · 稳定恢复 ${yes(data.metrics.stable_recovery)} · 全程成功 ${yes(data.metrics.success)}`;
+const points=data.road.flat(),xs=points.map(p=>p[0]),ys=points.map(p=>p[1]);
+const xmin=Math.min(...xs)-4,xmax=Math.max(...xs)+4,ymin=Math.min(...ys)-5,ymax=Math.max(...ys)+5;
+const scale=Math.min(1040/(xmax-xmin),350/(ymax-ymin));
+function xy(p){return [550+(p[0]-(xmin+xmax)/2)*scale,210-(p[1]-(ymin+ymax)/2)*scale]}
+function poly(ps,color,fill=false){ctx.beginPath();ps.forEach((p,i)=>{let q=xy(p);i?ctx.lineTo(...q):ctx.moveTo(...q)});if(fill){ctx.closePath();ctx.fillStyle=color;ctx.fill()}else{ctx.strokeStyle=color;ctx.stroke()}}
+function draw(){
+ const i=+slider.value,r=data.rows[i];ctx.clearRect(0,0,1100,420);
+ data.patches.filter(p=>p.start<=r.t&&r.t<p.end).forEach(p=>poly(p.polygon,'#fbe4c4',true));
+ data.road.forEach((p,j)=>{ctx.setLineDash(j===1?[6,6]:[]);poly(p,'#a0acbb')});ctx.setLineDash([]);
+ data.obstacles.forEach((p,j)=>poly(p,r.visible_obstacle_indices.includes(j)?'#c84545':'#aab0ba',true));
+ poly(data.rows.slice(0,i+1).map(r=>[r.x_m,r.y_m]),'#377ede');
+ const c=Math.cos(r.psi_rad),s=Math.sin(r.psi_rad);
+ poly([[1,1],[-1,1],[-1,-1],[1,-1]].map(([a,b])=>[r.x_m+a*data.length/2*c-b*data.width/2*s,r.y_m+a*data.length/2*s+b*data.width/2*c]),'#245bbb',true);
+ poly([[r.x_m,r.y_m],[r.x_m+data.length*.65*c,r.y_m+data.length*.65*s]],'#122c5b');
+ document.querySelector('#stats').textContent=`t = ${r.t.toFixed(2)} / ${data.rows.at(-1).t.toFixed(2)} s   v = ${r.v_x_mps.toFixed(2)} m/s   β = ${(r.beta_rad*180/Math.PI).toFixed(2)}°\n已揭示障碍：${r.visible_obstacles}   已越过全部障碍：${yes(r.obstacles_passed)}   恢复保持：${r.recovery_hold_s.toFixed(2)} s\n转角：${r.steering_rad.toFixed(3)} rad   纵向力请求 / 执行：${r.force_request_N.toFixed(0)} / ${r.force_executed_N.toFixed(0)} N\n逐轮附着缩放（左前 / 右前 / 左后 / 右后）：${['fl','fr','rl','rr'].map(w=>r['scale_true_'+w].toFixed(2)).join(' / ')}\n横向偏差：${r.d.toFixed(2)} m   航向误差：${(r.heading_error*180/Math.PI).toFixed(2)}°   累计最小道路余量：${r.min_road_margin_m.toFixed(3)} m`;
+}
+let playing=false,last=null,clock=0;
+function pause(){playing=false;button.textContent='播放'}
+button.onclick=()=>{if(playing){pause();return}if(+slider.value>=data.rows.length-1)slider.value=0;clock=data.rows[+slider.value].t;last=null;playing=true;button.textContent='暂停';draw()};
+slider.oninput=()=>{pause();clock=data.rows[+slider.value].t;draw()};
+function tick(t){
+ if(playing){if(last!==null)clock+=Math.min((t-last)/1000,.1)*Number(speed.value);let i=+slider.value;
+ while(i<data.rows.length-1&&data.rows[i+1].t<=clock+1e-9)i++;
+ slider.value=i;draw();if(i===data.rows.length-1)pause()}
+ last=t;requestAnimationFrame(tick)
+}
+draw();requestAnimationFrame(tick);
+</script></html>

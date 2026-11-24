@@ -1,0 +1,18 @@
+{
+  "dataset": "nuPlan v1.1 test database files required by interPlan interplan10",
+  "source_archive": "nuplan-v1.1_test.zip",
+  "source_archive_url": "https://motional-nuplan.s3.ap-northeast-1.amazonaws.com/public/nuplan-v1.1/nuplan-v1.1_test.zip",
+  "destination": "/home/ljt23/research_ca/01_flow_planner/data/nuplan-v1.1/splits/test",
+  "sensor_blobs_required": false,
+  "maps_already_present": "/home/ljt23/research_ca/01_flow_planner/data/maps",
+  "las_vegas_train_parts_required": [],
+  "database_files": [
+    "2021.05.25.12.30.39_veh-25_00321_01196.db",
+    "2021.05.25.14.16.10_veh-35_00083_00485.db",
+    "2021.10.06.04.07.24_veh-49_00776_01719.db",
+    "2021.06.28.21.29.28_veh-16_01912_03183.db",
+    "2021.10.06.02.32.50_veh-53_00633_00800.db",
+    "2021.06.03.12.02.06_veh-35_04692_04763.db",
+    "2021.09.22.03.46.15_veh-51_01522_02013.db"
+  ]
+}

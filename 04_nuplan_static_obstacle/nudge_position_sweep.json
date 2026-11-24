@@ -1,0 +1,22 @@
+{
+  "source_modified_token": "81f400b414215325-s0",
+  "coordinate_convention": {
+    "longitudinal_m": "positive follows the stopped vehicle heading (farther ahead of ego)",
+    "lateral_m": "positive is left of the stopped vehicle heading"
+  },
+  "variants": [
+    {"id": "baseline", "longitudinal_m": 0.0, "lateral_m": 0.0},
+    {"id": "closer_8m", "longitudinal_m": -8.0, "lateral_m": 0.0},
+    {"id": "farther_8m", "longitudinal_m": 8.0, "lateral_m": 0.0},
+    {"id": "left_1m", "longitudinal_m": 0.0, "lateral_m": 1.0},
+    {"id": "right_1m", "longitudinal_m": 0.0, "lateral_m": -1.0}
+  ],
+  "fixed_settings": {
+    "seed": 0,
+    "cfg_weight": 1.0,
+    "sample_steps": 4,
+    "tracker": "nuPlan LQR",
+    "motion_model": "nuPlan kinematic bicycle",
+    "observation": "interPlan IDMAgents"
+  }
+}

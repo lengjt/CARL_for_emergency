@@ -1,0 +1,35 @@
+{
+  "scenario_token": "1a8ace31c0095a47",
+  "database": "/home/ljt23/research_ca/01_flow_planner/data/nuplan-v1.1/splits/mini/2021.10.06.07.26.10_veh-52_00006_00398.db",
+  "map_name": "sg-one-north",
+  "scenario_type": "medium_magnitude_speed",
+  "initial_speed_mps": 7.727444648020504,
+  "selection_reason": "Forward-moving mini scenario on the same local road network as the interPlan nudge example. The selected segment is a straight, low-complexity lane with no adjacent connector at the obstacle point.",
+  "placement": {
+    "expert_route_distance_m": 30.139381633641744,
+    "expert_rear_axle_pose": [365095.2264189389, 143343.9631514244, 1.1528267997743396],
+    "lateral_offset_m": -1.0,
+    "offset_convention": "positive is left of expert heading",
+    "obstacle_center_pose": [365096.140, 143343.557, 1.1528267997743396],
+    "lane_id": "52431",
+    "expert_to_left_boundary_m": 3.165999361256518,
+    "expert_to_right_boundary_m": 2.195249917999612,
+    "estimated_lane_width_m": 5.36124927925613,
+    "estimated_clear_width_left_of_obstacle_m": 3.0175,
+    "reason": "Initial placement kept the stopped vehicle fully inside the lane. It was fixed before either initial model run, but left only about 0.72 m after subtracting ego width and caused a collision."
+  },
+  "recorded_adjustment_after_failed_pair": {
+    "failure_results": "/home/ljt23/research_ca/04_nuplan_static_obstacle/results_interplan_nudge",
+    "first_collision_time_s": 3.1999489999999997,
+    "old_lateral_offset_m": -1.0,
+    "new_lateral_offset_m": -1.8,
+    "new_obstacle_center_pose": [365096.87146594626, 143343.23252132395, 1.1528267997743396],
+    "reason": "The initial 3.02 m clear strip was not a safe passing corridor for a 2.297 m-wide ego vehicle. The revised geometry represents a shoulder-parked vehicle partially intruding into the lane and requires a small nudge, matching the intended interPlan behavior more closely. No planner, seed, controller, model, duration, or longitudinal distance was changed.",
+    "second_failure_results": "/home/ljt23/research_ca/04_nuplan_static_obstacle/results_interplan_nudge_success",
+    "second_lateral_offset_m": -1.8,
+    "second_first_collision_time_s": 3.1999489999999997,
+    "final_lateral_offset_m": -1.9,
+    "final_obstacle_center_pose": [365096.96285744663, 143343.19193076284, 1.1528267997743396],
+    "final_adjustment_reason": "Offline full-body geometry over the already executed paths showed that -1.8 m overlapped by about 0.03 m, -1.9 m retained baseline collision but would allow the observed nudge response to clear by about 0.03 m, and -2.2 m would make even baseline naturally collision-free."
+  }
+}

@@ -1,0 +1,43 @@
+project:
+  flow_planner_root: /home/ljt23/research_ca/01_flow_planner
+  upstream_run_config: /home/ljt23/research_ca/01_flow_planner/artifacts/nuplan/exp/simulation/closed_loop_nonreactive_agents/flow_planner_mini/2026-10-13_21-31-26/code/hydra/config.yaml
+  inference_config: /home/ljt23/research_ca/01_flow_planner/artifacts/nuplan/inference_config.yaml
+  checkpoint: /home/ljt23/research_ca/01_flow_planner/checkpoints/model.pth
+  data_root: /home/ljt23/research_ca/01_flow_planner/data
+  maps_root: /home/ljt23/research_ca/01_flow_planner/data/maps
+
+scenario:
+  token: 04e1fbf1adc552fe
+  database: /home/ljt23/research_ca/01_flow_planner/data/nuplan-v1.1/splits/mini/2021.10.05.07.10.04_veh-52_01442_01802.db
+  expected_map: sg-one-north
+  expected_type: medium_magnitude_speed
+  simulation_history_seconds: 2.0
+
+planner:
+  seed: 0
+  cfg_weight: 1.0
+  sample_steps: 4
+  future_horizon_seconds: 8.0
+  future_poses: 80
+  past_horizon_seconds: 2.0
+  past_poses: 20
+  device: cuda
+
+simulation:
+  dt_seconds: 0.1
+  duration_seconds: 15.0
+  traffic_mode: nonreactive_log_replay
+  tracker: nuplan_lqr
+  motion_model: nuplan_kinematic_bicycle
+
+obstacle:
+  enabled_variant: obstacle
+  category: BARRIER
+  longitudinal_m: 35.0
+  lateral_m: 0.0
+  length_m: 4.0
+  width_m: 2.2
+  height_m: 1.2
+  heading_offset_rad: 0.0
+  token: added-static-barrier
+

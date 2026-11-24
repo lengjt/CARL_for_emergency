@@ -1,0 +1,4 @@
+# Validated Ubuntu 22.04 Python runtime packages. bootstrap.sh checks these
+# exact versions while reusing the corresponding apt-provided binary packages.
+numpy==1.21.5
+matplotlib==3.5.1

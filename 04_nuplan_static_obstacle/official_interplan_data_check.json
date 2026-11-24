@@ -1,0 +1,88 @@
+{
+  "passed": true,
+  "destination": "/home/ljt23/research_ca/01_flow_planner/data/nuplan-v1.1/splits/test",
+  "expected_database_count": 7,
+  "present_database_count": 7,
+  "interplan10_modified_scenario_count": 80,
+  "required_base_tokens": [
+    "168c4e592f1b5984",
+    "2d62c3139aa95007",
+    "5016a2a4ad1350d6",
+    "6dd2064204c654b7",
+    "71f182558ee95100",
+    "7bc92573f75d5a4c",
+    "81f400b414215325",
+    "948201ecfe2c560a",
+    "9e7581ef72155c9f",
+    "c710330e5114501c",
+    "cd0e827efbe85a8f",
+    "d480a5d2b0fe5fe6",
+    "feb82815b92a5512"
+  ],
+  "missing_files": [],
+  "missing_base_tokens": [],
+  "database_checks": {
+    "2021.05.25.12.30.39_veh-25_00321_01196.db": {
+      "size_bytes": 570941440,
+      "sqlite_quick_check": "ok",
+      "required_tables_present": true,
+      "interplan10_base_tokens": [
+        "d480a5d2b0fe5fe6"
+      ]
+    },
+    "2021.05.25.14.16.10_veh-35_00083_00485.db": {
+      "size_bytes": 263675904,
+      "sqlite_quick_check": "ok",
+      "required_tables_present": true,
+      "interplan10_base_tokens": [
+        "6dd2064204c654b7"
+      ]
+    },
+    "2021.10.06.04.07.24_veh-49_00776_01719.db": {
+      "size_bytes": 116936704,
+      "sqlite_quick_check": "ok",
+      "required_tables_present": true,
+      "interplan10_base_tokens": [
+        "948201ecfe2c560a"
+      ]
+    },
+    "2021.06.28.21.29.28_veh-16_01912_03183.db": {
+      "size_bytes": 753942528,
+      "sqlite_quick_check": "ok",
+      "required_tables_present": true,
+      "interplan10_base_tokens": [
+        "5016a2a4ad1350d6",
+        "7bc92573f75d5a4c"
+      ]
+    },
+    "2021.10.06.02.32.50_veh-53_00633_00800.db": {
+      "size_bytes": 16949248,
+      "sqlite_quick_check": "ok",
+      "required_tables_present": true,
+      "interplan10_base_tokens": [
+        "168c4e592f1b5984",
+        "2d62c3139aa95007",
+        "71f182558ee95100",
+        "9e7581ef72155c9f",
+        "c710330e5114501c"
+      ]
+    },
+    "2021.06.03.12.02.06_veh-35_04692_04763.db": {
+      "size_bytes": 45854720,
+      "sqlite_quick_check": "ok",
+      "required_tables_present": true,
+      "interplan10_base_tokens": [
+        "feb82815b92a5512"
+      ]
+    },
+    "2021.09.22.03.46.15_veh-51_01522_02013.db": {
+      "size_bytes": 81006592,
+      "sqlite_quick_check": "ok",
+      "required_tables_present": true,
+      "interplan10_base_tokens": [
+        "81f400b414215325",
+        "cd0e827efbe85a8f"
+      ]
+    }
+  }
+}

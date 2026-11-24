@@ -1,0 +1,17 @@
+{
+  "name": "rolling_feedback_lattice_v1",
+  "replan_period_s": 0.1,
+  "deadline_s": 0.1,
+  "horizon_s": 5.0,
+  "prediction_dt_s": 0.01,
+  "geometry_margin_m": 0.25,
+  "offsets_m": [2.6, 3.0, 3.4],
+  "ramp_factors": [0.85, 1.1],
+  "brake_forces_N": [0.0, 1200.0, 2400.0],
+  "brake_end_offsets_m": [0.0],
+  "return_length_m": 35.0,
+  "switch_penalty": 2.0,
+  "effective_mu_x_at_scale_1": 1.46,
+  "effective_mu_y_at_scale_1": 1.18,
+  "scope": "Straight road; static revealed obstacles; current minimum wheel capability held constant over horizon. Prediction feasibility is not an OCD safety certificate."
+}

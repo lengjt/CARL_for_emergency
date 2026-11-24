@@ -1,0 +1,30 @@
+{
+  "name": "residual_mlp_cfm_v1",
+  "condition_fields": [
+    "relative_obstacle_s_m",
+    "relative_obstacle_d_m",
+    "road_width_m",
+    "capability_scale",
+    "v_x_mps",
+    "v_y_mps",
+    "yaw_rate_radps",
+    "steering_rad",
+    "actuator_force_kN",
+    "lateral_d_m",
+    "heading_error_rad",
+    "initial_speed_mps"
+  ],
+  "target_fields": ["signed_offset_m", "ramp_length_m", "brake_kN"],
+  "target_clip": [[-4.0, 4.0], [5.0, 60.0], [0.0, 5.0]],
+  "width": 64,
+  "residual_blocks": 3,
+  "batch_size": 512,
+  "training_steps": 4000,
+  "learning_rate": 0.0003,
+  "weight_decay": 0.000001,
+  "validation_interval": 100,
+  "patience_intervals": 10,
+  "sampling_steps": 8,
+  "candidate_count": 36,
+  "seeds": [17, 29, 43]
+}

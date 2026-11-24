@@ -1,0 +1,19 @@
+{
+  "source_modified_token": "81f400b414215325-s0",
+  "initial_speed_mps": 15.0,
+  "history_initialization": "2 s ego history reconstructed backward along logged headings at constant 15 m/s; real initial pose, road, route and obstacle retained",
+  "interpretation": "relative internal MF5.2 LMUX/LMUY peak-parameter scale; not an absolute road friction coefficient",
+  "levels": [
+    {"id": "low_0p5", "label": "15 m/s, low peak scale 0.5", "internal_peak_scale": 0.5},
+    {"id": "medium_0p8", "label": "15 m/s, medium peak scale 0.8", "internal_peak_scale": 0.8},
+    {"id": "high_1p0", "label": "15 m/s, high/regular peak scale 1.0", "internal_peak_scale": 1.0}
+  ],
+  "fixed": {
+    "flow_planner_seed": 0,
+    "cfg_weight": 1.0,
+    "sample_steps": 4,
+    "tracker": "unchanged official nuPlan LQR",
+    "ocd_physics_step_s": 0.001,
+    "horizon_steps": 181
+  }
+}

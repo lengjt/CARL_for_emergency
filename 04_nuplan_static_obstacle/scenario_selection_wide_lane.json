@@ -1,0 +1,226 @@
+{
+  "token": "00513119374c5db4",
+  "type": "unknown",
+  "map": "us-nv-las-vegas-strip",
+  "log": "2021.06.09.17.23.18_veh-38_02526_03027",
+  "duration_s": 19.900089,
+  "initial_speed_mps": 8.387902032568102,
+  "target_expert_distance_m": 40.050646816660965,
+  "target_iteration": 59,
+  "barrier_pose": {
+    "center_x_m": 664447.7718078416,
+    "center_y_m": 3996780.3309316733,
+    "heading_rad": -1.5410578297663597
+  },
+  "lane_id": "67712",
+  "roadblock_id": "65685",
+  "route_roadblock_ids": [
+    "66799",
+    "65685",
+    "66720",
+    "65640",
+    "67001",
+    "65650",
+    "60291",
+    "47701",
+    "66764",
+    "65645",
+    "66727",
+    "65674",
+    "66684",
+    "65692",
+    "66846",
+    "65732",
+    "66943",
+    "65647",
+    "66662",
+    "47513",
+    "66440",
+    "65649",
+    "66485",
+    "65728",
+    "66236",
+    "65707",
+    "66777",
+    "65642",
+    "66564"
+  ],
+  "barrier_roadblock_on_route": true,
+  "adjacent_lanes": [
+    {
+      "lane_id": "67730",
+      "roadblock_id": "65685",
+      "center_separation_m": 3.542197281456409,
+      "heading_delta_rad": 0.005232518276433673,
+      "polygon_clearance_for_ego_and_barrier_m": 1.2936972814564092
+    },
+    {
+      "lane_id": "67639",
+      "roadblock_id": "65685",
+      "center_separation_m": 3.46760004647164,
+      "heading_delta_rad": 0.0007086339107162942,
+      "polygon_clearance_for_ego_and_barrier_m": 1.21910004647164
+    }
+  ],
+  "first_lane_connector_distance_m": null,
+  "local_corridor_moving_track_count": 26,
+  "initial_local_corridor_moving_track_count": 7,
+  "first_8s_local_corridor_moving_track_count": 18,
+  "nearest_first_8s_local_corridor_moving_tracks": [
+    {
+      "track_token": "b6d24fa7fe82560e",
+      "type": "VEHICLE",
+      "minimum_distance_to_barrier_m": 0.2988771925239855
+    },
+    {
+      "track_token": "cdeb065069e75020",
+      "type": "VEHICLE",
+      "minimum_distance_to_barrier_m": 3.702091900239832
+    },
+    {
+      "track_token": "0369e985bf2655c4",
+      "type": "VEHICLE",
+      "minimum_distance_to_barrier_m": 4.278828236944215
+    },
+    {
+      "track_token": "429fac2479ab5c4c",
+      "type": "VEHICLE",
+      "minimum_distance_to_barrier_m": 10.276364192697743
+    },
+    {
+      "track_token": "866f4e347b65518c",
+      "type": "VEHICLE",
+      "minimum_distance_to_barrier_m": 10.287596775124603
+    },
+    {
+      "track_token": "6bba63977bdc5e75",
+      "type": "VEHICLE",
+      "minimum_distance_to_barrier_m": 10.64201113808015
+    },
+    {
+      "track_token": "3481bebd05155cdf",
+      "type": "VEHICLE",
+      "minimum_distance_to_barrier_m": 11.309809813326737
+    },
+    {
+      "track_token": "85dc072c727a5a83",
+      "type": "VEHICLE",
+      "minimum_distance_to_barrier_m": 21.616478176952263
+    },
+    {
+      "track_token": "eef7f502d9295fa6",
+      "type": "VEHICLE",
+      "minimum_distance_to_barrier_m": 21.93212656027816
+    },
+    {
+      "track_token": "b747ea1613895d52",
+      "type": "VEHICLE",
+      "minimum_distance_to_barrier_m": 31.936602885956848
+    }
+  ],
+  "nearest_local_corridor_moving_tracks": [
+    {
+      "track_token": "6bba63977bdc5e75",
+      "type": "VEHICLE",
+      "minimum_distance_to_barrier_m": 0.03643276001306494
+    },
+    {
+      "track_token": "b6d24fa7fe82560e",
+      "type": "VEHICLE",
+      "minimum_distance_to_barrier_m": 0.2988771925239855
+    },
+    {
+      "track_token": "bbbacb9bbef85abd",
+      "type": "VEHICLE",
+      "minimum_distance_to_barrier_m": 3.267134435202016
+    },
+    {
+      "track_token": "cdeb065069e75020",
+      "type": "VEHICLE",
+      "minimum_distance_to_barrier_m": 3.6400635199269313
+    },
+    {
+      "track_token": "0369e985bf2655c4",
+      "type": "VEHICLE",
+      "minimum_distance_to_barrier_m": 4.278828236944215
+    },
+    {
+      "track_token": "2ef27fb31fc354ad",
+      "type": "VEHICLE",
+      "minimum_distance_to_barrier_m": 5.796345983831676
+    },
+    {
+      "track_token": "429fac2479ab5c4c",
+      "type": "VEHICLE",
+      "minimum_distance_to_barrier_m": 7.70310826946367
+    },
+    {
+      "track_token": "029c00c3b2a55f9d",
+      "type": "VEHICLE",
+      "minimum_distance_to_barrier_m": 10.277793794690366
+    },
+    {
+      "track_token": "866f4e347b65518c",
+      "type": "VEHICLE",
+      "minimum_distance_to_barrier_m": 10.287596775124603
+    },
+    {
+      "track_token": "3481bebd05155cdf",
+      "type": "VEHICLE",
+      "minimum_distance_to_barrier_m": 11.309809813326737
+    },
+    {
+      "track_token": "565aa1482b985071",
+      "type": "VEHICLE",
+      "minimum_distance_to_barrier_m": 16.63748082598477
+    },
+    {
+      "track_token": "7ed737efac865104",
+      "type": "VEHICLE",
+      "minimum_distance_to_barrier_m": 19.484061229045402
+    },
+    {
+      "track_token": "85dc072c727a5a83",
+      "type": "VEHICLE",
+      "minimum_distance_to_barrier_m": 21.616478176952263
+    },
+    {
+      "track_token": "eef7f502d9295fa6",
+      "type": "VEHICLE",
+      "minimum_distance_to_barrier_m": 21.93212656027816
+    },
+    {
+      "track_token": "b694c974fac554d0",
+      "type": "VEHICLE",
+      "minimum_distance_to_barrier_m": 24.51925978076981
+    },
+    {
+      "track_token": "fddac736726f565e",
+      "type": "VEHICLE",
+      "minimum_distance_to_barrier_m": 26.599748525227515
+    },
+    {
+      "track_token": "35c98698678359a0",
+      "type": "VEHICLE",
+      "minimum_distance_to_barrier_m": 26.741830699926115
+    },
+    {
+      "track_token": "9938611af6b850fe",
+      "type": "VEHICLE",
+      "minimum_distance_to_barrier_m": 28.1203817280072
+    },
+    {
+      "track_token": "b747ea1613895d52",
+      "type": "VEHICLE",
+      "minimum_distance_to_barrier_m": 31.936602885956848
+    },
+    {
+      "track_token": "59bbe1bb79c85267",
+      "type": "VEHICLE",
+      "minimum_distance_to_barrier_m": 31.94073269295342
+    }
+  ],
+  "existing_static_count": 17,
+  "existing_static_closer_than_barrier_count": 1,
+  "selection_reason": "Straight three-lane same-direction road, no lane connector on the logged path, and both adjacent lanes provide geometric passing space."
+}

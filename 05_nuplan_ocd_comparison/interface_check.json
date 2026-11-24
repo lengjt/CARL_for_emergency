@@ -1,0 +1,35 @@
+{
+  "passed": true,
+  "checks": {
+    "straight_heading_small": true,
+    "straight_lateral_small": true,
+    "positive_steering_turns_left": true,
+    "braking_reduces_speed": true
+  },
+  "results_after_1s": {
+    "straight_hold": {
+      "x_m": 4.982486530693764,
+      "y_m": 0.0,
+      "heading_rad": 0.0,
+      "speed_mps": 4.98720065455782,
+      "steering_rad": 0.0,
+      "yaw_rate_radps": 0.0
+    },
+    "positive_left_turn": {
+      "x_m": 4.979830470984068,
+      "y_m": 0.0778906661925586,
+      "heading_rad": 0.051264506558742706,
+      "speed_mps": 4.982485367199836,
+      "steering_rad": 0.06832369770361567,
+      "yaw_rate_radps": 0.10603546973607914
+    },
+    "braking": {
+      "x_m": 4.364578062358339,
+      "y_m": 0.0,
+      "heading_rad": 0.0,
+      "speed_mps": 3.6299203012906394,
+      "steering_rad": 0.0,
+      "yaw_rate_radps": 0.0
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "source_stage": "/home/ljt23/research_ca/04_nuplan_static_obstacle",
+  "modified_scenario_token": "81f400b414215325-s0",
+  "scenario_type": "nudge_around_parked_vehicle",
+  "fixed_horizon_steps": 181,
+  "control_and_planning_period_s": 0.1,
+  "ocd": {
+    "vehicle_config": "/home/ljt23/research_ca/02_extreme_avoidance/configs/vehicle.json",
+    "physics_step_s": 0.001,
+    "physics_substeps_per_control": 100,
+    "friction_mode": "internal_mu",
+    "internal_mf52_peak_scale": 1.0,
+    "acceleration_to_force": "F_request = effective_mass * LQR_acceleration + rolling_resistance + aerodynamic_drag",
+    "steering_rate_to_angle": "delta_request = measured_delta + LQR_delta_rate * control_period",
+    "use_existing_command_delay_and_filters": true
+  },
+  "flow_planner": {
+    "seed": 0,
+    "cfg_weight": 1.0,
+    "sample_steps": 4,
+    "checkpoint_sha256": "9231b4c02968c9e42dd2881ad3e7dd4bd362796f7b2c0158e0458c4ab3bde88e"
+  },
+  "tracker": "official nuPlan LQR with unchanged parameters",
+  "traffic": "interPlan IDMAgents"
+}

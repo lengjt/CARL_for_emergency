@@ -1,0 +1,49 @@
+{
+  "schema_version": 2,
+  "primary_abstraction": {
+    "name": "internal_mf52_peak_scale",
+    "scenario_mode": "internal_mu",
+    "symbol": "lambda_peak",
+    "ocd_fields": ["LMUX", "LMUY"],
+    "scenario_fields": [
+      "base_scale",
+      "patches[].scale"
+    ],
+    "domain": "strictly positive",
+    "scope": "independent value at each wheel contact point as a function of x, y, and time",
+    "equations": {
+      "LMUX_i": "baseline_LMUX_i * lambda_peak(x_i,y_i,t)",
+      "LMUY_i": "baseline_LMUY_i * lambda_peak(x_i,y_i,t)",
+      "external_lambda_mue_i": "1.0; no double scaling"
+    },
+    "interpretation": "relative internal MF52 peak-friction parameter scale; other tire parameters are fixed",
+    "not_interpreted_as": "an absolute Coulomb or road friction coefficient"
+  },
+  "legacy_abstraction": {
+    "scenario_mode": "post_force",
+    "symbol": "lambda_F",
+    "equations": {"Fx": "lambda_F * Fx_MF52", "Fy": "lambda_F * Fy_MF52"},
+    "compatibility": "Existing scenario JSON without friction_mode keeps post_force; new benchmark explicitly selects internal_mu"
+  },
+  "truth_and_observation": {
+    "truth": "wheel-local scale is applied every physics step",
+    "estimate": "capability_scale_estimate is an oracle proxy with optional multiplicative bias and delay",
+    "planner": "uses current minimum estimated wheel scale held constant over the horizon; no future patch or hidden obstacle access",
+    "legacy_baselines_use_estimate": false
+  },
+  "reference_reporting": {
+    "reference_load_N": 2500.0,
+    "camber_rad": 0.0,
+    "longitudinal_slip_scan": [-0.3, 0.3, 301],
+    "slip_angle_scan_rad": [-0.25, 0.25, 301],
+    "baseline_peak_abs_Fx_over_Fz": 1.4614653878438018,
+    "baseline_peak_abs_Fy_over_Fz": 1.1785424492953378,
+    "derived_peak_rule": "Separate pure-slip peak ratios at a specified load/grid cannot be demanded simultaneously. Internal scaling changes peak-slip locations and differs from output scaling."
+  },
+  "research_use": {
+    "primary": "controlled capability variation, spatial patches, split grip, conditioning and model-mismatch experiments",
+    "limitation": "synthetic 800 kg car; fixed remaining tire parameters; no road-specific stiffness, temperature, pressure, hysteresis identification or four-channel ABS",
+    "sensitivity_model": "post_force and biased capability estimates",
+    "claim_boundary": "results concern the frozen tire model's peak capability variation, not identified real-road friction"
+  }
+}

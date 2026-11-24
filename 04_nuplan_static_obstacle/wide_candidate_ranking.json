@@ -1,0 +1,242 @@
+[
+  {
+    "token": "0054da31da0851b1",
+    "type": "unknown",
+    "map": "us-nv-las-vegas-strip",
+    "log": "2021.06.09.14.58.55_veh-35_01095_01484",
+    "database": "/home/ljt23/research_ca/01_flow_planner/data/nuplan-v1.1/splits/mini/2021.06.09.14.58.55_veh-35_01095_01484.db",
+    "initial_speed_mps": 12.819344364068616,
+    "heading_range_first_60m_deg": 0.8602536588157765,
+    "lane_id": "67809",
+    "roadblock_id": "65702",
+    "adjacent_lane_id": "67713",
+    "adjacent_roadblock_id": "65702",
+    "lane_center_separation_m": 4.294407440438018,
+    "closer_static_count": 1,
+    "barrier_pose": {
+      "center_x_m": 664481.3273746842,
+      "center_y_m": 3996800.994831554,
+      "heading_rad": 1.5889021805409431
+    }
+  },
+  {
+    "token": "00513119374c5db4",
+    "type": "unknown",
+    "map": "us-nv-las-vegas-strip",
+    "log": "2021.06.09.17.23.18_veh-38_02526_03027",
+    "database": "/home/ljt23/research_ca/01_flow_planner/data/nuplan-v1.1/splits/mini/2021.06.09.17.23.18_veh-38_02526_03027.db",
+    "initial_speed_mps": 8.387902032568102,
+    "heading_range_first_60m_deg": 1.6538103666883381,
+    "lane_id": "67712",
+    "roadblock_id": "65685",
+    "adjacent_lane_id": "67730",
+    "adjacent_roadblock_id": "65685",
+    "lane_center_separation_m": 3.542197281456409,
+    "closer_static_count": 1,
+    "barrier_pose": {
+      "center_x_m": 664447.7718078416,
+      "center_y_m": 3996780.3309316733,
+      "heading_rad": -1.5410578297663597
+    }
+  },
+  {
+    "token": "004a5f987d995331",
+    "type": "high_magnitude_speed",
+    "map": "us-nv-las-vegas-strip",
+    "log": "2021.05.12.23.36.44_veh-35_02035_02387",
+    "database": "/home/ljt23/research_ca/01_flow_planner/data/nuplan-v1.1/splits/mini/2021.05.12.23.36.44_veh-35_02035_02387.db",
+    "initial_speed_mps": 11.647711071132003,
+    "heading_range_first_60m_deg": 0.35355631216314043,
+    "lane_id": "67456",
+    "roadblock_id": "47186",
+    "adjacent_lane_id": "67398",
+    "adjacent_roadblock_id": "47186",
+    "lane_center_separation_m": 3.4356294408230164,
+    "closer_static_count": 3,
+    "barrier_pose": {
+      "center_x_m": 664431.797738261,
+      "center_y_m": 3998083.46081295,
+      "heading_rad": -1.588662528312066
+    }
+  },
+  {
+    "token": "007687a9bf385bef",
+    "type": "high_magnitude_speed",
+    "map": "us-nv-las-vegas-strip",
+    "log": "2021.05.12.23.36.44_veh-35_01133_01535",
+    "database": "/home/ljt23/research_ca/01_flow_planner/data/nuplan-v1.1/splits/mini/2021.05.12.23.36.44_veh-35_01133_01535.db",
+    "initial_speed_mps": 13.077139058674382,
+    "heading_range_first_60m_deg": 0.627634318390337,
+    "lane_id": "67456",
+    "roadblock_id": "47186",
+    "adjacent_lane_id": "67398",
+    "adjacent_roadblock_id": "47186",
+    "lane_center_separation_m": 3.4365278032011966,
+    "closer_static_count": 6,
+    "barrier_pose": {
+      "center_x_m": 664431.7047367893,
+      "center_y_m": 3998078.255925221,
+      "heading_rad": -1.5886625294760333
+    }
+  },
+  {
+    "token": "00217352023b57e1",
+    "type": "near_high_speed_vehicle",
+    "map": "us-nv-las-vegas-strip",
+    "log": "2021.05.12.22.28.35_veh-35_00620_01164",
+    "database": "/home/ljt23/research_ca/01_flow_planner/data/nuplan-v1.1/splits/mini/2021.05.12.22.28.35_veh-35_00620_01164.db",
+    "initial_speed_mps": 10.0519029969639,
+    "heading_range_first_60m_deg": 0.3052466745915128,
+    "lane_id": "67456",
+    "roadblock_id": "47186",
+    "adjacent_lane_id": "67398",
+    "adjacent_roadblock_id": "47186",
+    "lane_center_separation_m": 3.4260522140744314,
+    "closer_static_count": 32,
+    "barrier_pose": {
+      "center_x_m": 664431.0404893894,
+      "center_y_m": 3998040.126144763,
+      "heading_rad": -1.5874327151577328
+    }
+  },
+  {
+    "token": "002a6fe2270f5a00",
+    "type": "traversing_intersection",
+    "map": "us-nv-las-vegas-strip",
+    "log": "2021.06.09.14.58.55_veh-35_01894_02311",
+    "database": "/home/ljt23/research_ca/01_flow_planner/data/nuplan-v1.1/splits/mini/2021.06.09.14.58.55_veh-35_01894_02311.db",
+    "initial_speed_mps": 11.419044019849162,
+    "heading_range_first_60m_deg": 0.3429944732668783,
+    "lane_id": "67633",
+    "roadblock_id": "65689",
+    "adjacent_lane_id": "67817",
+    "adjacent_roadblock_id": "65689",
+    "lane_center_separation_m": 3.948735288775713,
+    "closer_static_count": 33,
+    "barrier_pose": {
+      "center_x_m": 664481.5432691858,
+      "center_y_m": 3996612.648109245,
+      "heading_rad": 1.5954085517158496
+    }
+  },
+  {
+    "token": "005cee1eb7755ebf",
+    "type": "unknown",
+    "map": "us-nv-las-vegas-strip",
+    "log": "2021.06.28.16.29.11_veh-38_01415_01821",
+    "database": "/home/ljt23/research_ca/01_flow_planner/data/nuplan-v1.1/splits/mini/2021.06.28.16.29.11_veh-38_01415_01821.db",
+    "initial_speed_mps": 10.100648372368122,
+    "heading_range_first_60m_deg": 1.161832752127873,
+    "lane_id": "63091",
+    "roadblock_id": "65581",
+    "adjacent_lane_id": "63094",
+    "adjacent_roadblock_id": "65581",
+    "lane_center_separation_m": 3.4921337611222762,
+    "closer_static_count": 37,
+    "barrier_pose": {
+      "center_x_m": 664761.7007600891,
+      "center_y_m": 3999481.9301787433,
+      "heading_rad": -2.0381296588735642
+    }
+  },
+  {
+    "token": "005615fae50654a5",
+    "type": "unknown",
+    "map": "us-nv-las-vegas-strip",
+    "log": "2021.05.12.23.36.44_veh-35_00152_00504",
+    "database": "/home/ljt23/research_ca/01_flow_planner/data/nuplan-v1.1/splits/mini/2021.05.12.23.36.44_veh-35_00152_00504.db",
+    "initial_speed_mps": 10.197748041688916,
+    "heading_range_first_60m_deg": 3.57865572251585,
+    "lane_id": "67470",
+    "roadblock_id": "47054",
+    "adjacent_lane_id": "67237",
+    "adjacent_roadblock_id": "47054",
+    "lane_center_separation_m": 3.286925719579818,
+    "closer_static_count": 41,
+    "barrier_pose": {
+      "center_x_m": 664450.1007682926,
+      "center_y_m": 3998577.7546700262,
+      "heading_rad": 1.524081215838288
+    }
+  },
+  {
+    "token": "00582006ff305c02",
+    "type": "high_magnitude_speed",
+    "map": "us-nv-las-vegas-strip",
+    "log": "2021.07.16.00.51.05_veh-17_01352_01901",
+    "database": "/home/ljt23/research_ca/01_flow_planner/data/nuplan-v1.1/splits/mini/2021.07.16.00.51.05_veh-17_01352_01901.db",
+    "initial_speed_mps": 10.027843806383572,
+    "heading_range_first_60m_deg": 0.7521223434109243,
+    "lane_id": "67519",
+    "roadblock_id": "47219",
+    "adjacent_lane_id": "67490",
+    "adjacent_roadblock_id": "47219",
+    "lane_center_separation_m": 3.3818961126650517,
+    "closer_static_count": 53,
+    "barrier_pose": {
+      "center_x_m": 664819.4628600016,
+      "center_y_m": 3999593.5894175614,
+      "heading_rad": -2.043147625935183
+    }
+  },
+  {
+    "token": "00500940cd425b27",
+    "type": "high_magnitude_speed",
+    "map": "us-nv-las-vegas-strip",
+    "log": "2021.07.16.00.51.05_veh-17_01352_01901",
+    "database": "/home/ljt23/research_ca/01_flow_planner/data/nuplan-v1.1/splits/mini/2021.07.16.00.51.05_veh-17_01352_01901.db",
+    "initial_speed_mps": 8.633802723303905,
+    "heading_range_first_60m_deg": 1.3855325140127062,
+    "lane_id": "67519",
+    "roadblock_id": "47219",
+    "adjacent_lane_id": "67490",
+    "adjacent_roadblock_id": "47219",
+    "lane_center_separation_m": 3.43733181664423,
+    "closer_static_count": 54,
+    "barrier_pose": {
+      "center_x_m": 664827.5790314238,
+      "center_y_m": 3999609.4745917553,
+      "heading_rad": -2.043147625935183
+    }
+  },
+  {
+    "token": "00619aeddc575d59",
+    "type": "unknown",
+    "map": "us-nv-las-vegas-strip",
+    "log": "2021.07.16.00.51.05_veh-17_01352_01901",
+    "database": "/home/ljt23/research_ca/01_flow_planner/data/nuplan-v1.1/splits/mini/2021.07.16.00.51.05_veh-17_01352_01901.db",
+    "initial_speed_mps": 8.42472949546931,
+    "heading_range_first_60m_deg": 1.8297064379592969,
+    "lane_id": "67519",
+    "roadblock_id": "47219",
+    "adjacent_lane_id": "67490",
+    "adjacent_roadblock_id": "47219",
+    "lane_center_separation_m": 3.441551211404899,
+    "closer_static_count": 54,
+    "barrier_pose": {
+      "center_x_m": 664828.7506431431,
+      "center_y_m": 3999611.7676995876,
+      "heading_rad": -2.043147626142519
+    }
+  },
+  {
+    "token": "004e5805b997598c",
+    "type": "high_magnitude_speed",
+    "map": "us-nv-las-vegas-strip",
+    "log": "2021.06.09.14.58.55_veh-35_01894_02311",
+    "database": "/home/ljt23/research_ca/01_flow_planner/data/nuplan-v1.1/splits/mini/2021.06.09.14.58.55_veh-35_01894_02311.db",
+    "initial_speed_mps": 12.655784586883886,
+    "heading_range_first_60m_deg": 0.30517722695600474,
+    "lane_id": "67633",
+    "roadblock_id": "65689",
+    "adjacent_lane_id": "67817",
+    "adjacent_roadblock_id": "65689",
+    "lane_center_separation_m": 3.997671926611364,
+    "closer_static_count": 57,
+    "barrier_pose": {
+      "center_x_m": 664483.2260383589,
+      "center_y_m": 3996544.2906381846,
+      "heading_rad": 1.5954085502963693
+    }
+  }
+]

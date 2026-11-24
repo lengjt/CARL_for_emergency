@@ -1,0 +1,22 @@
+# interPlan-style, declarative scene modification record.
+# The executable adapter remains local because Flow Planner must receive a BARRIER
+# through its static-object channel; interPlan's parked-vehicle modifier uses VEHICLE.
+source_method: https://github.com/mh0797/interPlan
+source_commit: a85024a48935c92ec0d7c2a8cc2e583d01514469
+modification_details_dictionary:
+  00513119374c5db4:
+    special_scenario:
+      "0":
+        type: overtake_static_barrier
+        preserve_original_map_route_history: true
+        traffic_mode: nonreactive_log_replay
+        current_lane_id: "67712"
+        adjacent_lane_ids: ["67730", "67639"]
+        barrier:
+          category: BARRIER
+          center_x_m: 664447.7718078416
+          center_y_m: 3996780.3309316733
+          heading_rad: -1.5410578297663597
+          length_m: 4.0
+          width_m: 2.2
+          height_m: 1.2

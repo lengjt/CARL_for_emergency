@@ -1,0 +1,36 @@
+{
+  "name": "straight_popup",
+  "seed": 0,
+  "speed": 20.0,
+  "initial_s": 0.0,
+  "initial_d": 0.0,
+  "initial_heading_error": 0.0,
+  "initial_vy": 0.0,
+  "initial_yaw_rate": 0.0,
+  "dt": 0.001,
+  "control_dt": 0.02,
+  "duration": 12.0,
+  "base_scale": 1.0,
+  "scale_estimate_factor": 1.0,
+  "scale_estimate_delay": 0.0,
+  "road": {
+    "width": 10.0,
+    "length": 130.0,
+    "curvature": 0.0
+  },
+  "obstacles": [
+    {
+      "s": 45.0,
+      "d": 0.0,
+      "length": 4.0,
+      "width": 1.8,
+      "reveal_distance": 35.0
+    }
+  ],
+  "patches": [],
+  "recovery_duration": 0.8,
+  "recovery_lateral": 0.35,
+  "recovery_heading": 0.05,
+  "recovery_beta": 0.05,
+  "recovery_yaw_error": 0.08
+}

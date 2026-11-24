@@ -1,0 +1,51 @@
+project:
+  flow_planner_root: /home/ljt23/research_ca/01_flow_planner
+  upstream_run_config: /home/ljt23/research_ca/01_flow_planner/artifacts/nuplan/exp/simulation/closed_loop_nonreactive_agents/flow_planner_mini/2026-10-13_21-31-26/code/hydra/config.yaml
+  inference_config: /home/ljt23/research_ca/01_flow_planner/artifacts/nuplan/inference_config.yaml
+  checkpoint: /home/ljt23/research_ca/01_flow_planner/checkpoints/model.pth
+  data_root: /home/ljt23/research_ca/01_flow_planner/data
+  maps_root: /home/ljt23/research_ca/01_flow_planner/data/maps
+  results_dir: /home/ljt23/research_ca/04_nuplan_static_obstacle/results_interplan_nudge
+
+scenario:
+  token: 1a8ace31c0095a47
+  database: /home/ljt23/research_ca/01_flow_planner/data/nuplan-v1.1/splits/mini/2021.10.06.07.26.10_veh-52_00006_00398.db
+  expected_map: sg-one-north
+  expected_type: medium_magnitude_speed
+  simulation_history_seconds: 2.0
+  remove_invalid_goals: true
+
+planner:
+  seed: 0
+  cfg_weight: 1.0
+  sample_steps: 4
+  future_horizon_seconds: 8.0
+  future_poses: 80
+  past_horizon_seconds: 2.0
+  past_poses: 20
+  device: cuda
+
+simulation:
+  dt_seconds: 0.1
+  duration_seconds: 15.0
+  traffic_mode: nonreactive_log_replay_with_fixed_stopped_vehicle
+  tracker: nuplan_lqr
+  motion_model: nuplan_kinematic_bicycle
+
+obstacle:
+  enabled_variant: obstacle
+  display_name: stopped vehicle
+  representation: dynamic_agent
+  category: VEHICLE
+  placement: global
+  placement_route_distance_m: 30.139381633641744
+  placement_lateral_offset_m: -1.0
+  center_x_m: 365096.140
+  center_y_m: 143343.557
+  heading_rad: 1.1528267997743396
+  velocity_x_mps: 0.0
+  velocity_y_mps: 0.0
+  length_m: 5.176
+  width_m: 2.297
+  height_m: 1.777
+  token: added-interplan-stopped-vehicle

@@ -1,0 +1,31 @@
+# Local environments, caches, and compiled outputs
+**/.venv/
+**/.cache/
+**/__pycache__/
+**/*.py[cod]
+**/*.so
+**/build/
+**/build_*/
+
+# Large external checkouts and local data/model assets. Their exact revisions
+# are recorded in BASELINE.md instead of vendoring them into this repository.
+**/upstream/
+01_flow_planner/checkpoints/
+01_flow_planner/data/
+01_flow_planner/artifacts/
+01_flow_planner/.tools/
+02_extreme_avoidance/artifacts/
+03_CFM_model/artifacts/
+literature/
+
+# Generated experiment outputs. Reproducible summaries are captured by the
+# checked-in reports and BASELINE.md; raw outputs remain on disk.
+04_nuplan_static_obstacle/results*/
+05_nuplan_ocd_comparison/results*/
+06_optimal_control_expert/results*/
+
+# Local editor/OS files
+.DS_Store
+.idea/
+.vscode/
+
